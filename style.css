@@ -1,0 +1,138 @@
+body, #boot {
+    padding: 0;
+    margin: 0;
+}
+
+body, #boot, button {
+    font-family: 'Lexend', system-ui, -apple-system, sans-serif;
+}
+
+main, #boot {
+    background-image: url("assets/background.jpg");
+    background-size: cover;
+    margin: 0;
+    height: 100dvh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+#boot {
+    display: flex;
+}
+
+main {
+    display: none;
+}
+
+footer {
+    display: none;
+    justify-content: space-around;
+    background-color: rgba(159, 210, 251, 0.75);
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+    z-index: 1000;
+}
+
+.window {
+    background-color: white;
+    width: 60%;
+    height: 60%;
+    border-radius: 10px;
+    border: 1px solid grey;
+    z-index: 900;
+    position: absolute;
+}
+
+.window h1 {
+    margin: 5px;
+}
+
+.bar {
+    margin: 0;
+    background-color: #9fd2fb;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 1px solid grey;
+    user-select: none;
+    cursor: grab;
+}
+
+.bar *, button {
+    margin: 0;
+    border: unset;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 5px;
+}
+
+button {
+    font-size: small;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.bar p {
+    padding: 5px;
+    margin-left: 5px;
+}
+
+.button {
+    padding-top: 5px;
+    margin-right: 5px;
+}
+
+#power {
+    font-weight: bolder;
+    font-size: larger;
+}
+
+.apps {
+    top: 0;
+    left: 0;
+    position: fixed;
+    margin: 10px;
+}
+
+.app {
+    background-color: rgba(159, 210, 251, 0.75);
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    border-radius: 10px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.app * {
+    padding: 5px;
+}
+
+iframe {
+    border: unset;
+    height: 100%;
+    width: 100%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.powerOff {
+    padding: 5px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 10px;
+    position: relative;
+}
+
+.powerOff button {
+    background-color: #9fd2fb;
+}

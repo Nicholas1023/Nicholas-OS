@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nicholas' Operating System</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    </head>
+    <body id="body" style="background-color: black;">
+        <div id="boot">
+            <div style="text-align: center;">
+                <h1>Nicholas' Operating System</h1>
+                <p id="loading">Loading...</p>
+            </div>
+        </div>
+        <main id="main">
+            <div class="apps" id="apps">
+                <div class="app" id="fileOpen">
+                    <img src="assets/file.png" width="50px" height="50px">
+                    <p>File Viewer</p>
+                </div>
+                <div class="app" id="terminalOpen">
+                    <img src="assets/terminal.png" width="50px" height="50px">
+                    <p>Nicholas' Terminal</p>
+                </div>
+                <div class="app" id="installerOpen">
+                    <img src="assets/installer.png" width="50px" height="50px">
+                    <p>Web App Installer</p>
+                </div>
+            </div>
+            <div class="window" id="about">
+                <div class="bar" id="aboutBar">
+                    <p><b>About</b></p>
+                    <div class="button">
+                        <button onclick="minimiseW('about', 'aboutBar')">Minimise</button>
+                        <button onclick="maximiseW('about', 'aboutBar')">Maximise</button>
+                        <button onclick="closeW('about')">Close</button>
+                    </div>
+                </div>
+                <h1>Nicholas' OS V0.0.1</h1>
+                <p style="margin-left: 5px;">Thanks for visiting my web-based OS!</p>
+                <h2 style="margin-left: 5px;">Available Applications</h2>
+                <ul style="margin-left: 5px;">
+                    <li><b>File Viewer</b>: Open files from your computer.</li>
+                    <li><b>Nicholas' Terminal</b>: Web-based terminal version of my personal website.</li>
+                    <li><b>Web App Installer</b>: Install your favourite websites as a web application.</li>
+                    <li><b>Any website via the web app installer!</b></li>
+                </ul>
+            </div>
+            <div class="window" id="installer" style="display: none;">
+                <div class="bar" id="installerBar">
+                    <p><b>Web App Installer</b></p>
+                    <div class="button">
+                        <button onclick="minimiseW('installer', 'installerBar')">Minimise</button>
+                        <button onclick="maximiseW('installer', 'installerBar')">Maximise</button>
+                        <button onclick="closeW('installer')">Close</button>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center; margin-left: 5px;"><p >Enter URL:&nbsp;</p><input id="url" type="text"></div>
+                <div style="display: flex; align-items: center; margin-left: 5px;"><p>Enter app name:&nbsp;</p><input id="name" type="text"></div>
+                <div style="display: flex; align-items: center; margin-left: 5px;"><p>Enter app icon URL (optional):&nbsp;</p><input id="icon" type="text"></div>
+                <button style="background-color: #9fd2fb;" onclick="createWebApp()">Create web app</button>
+            </div>
+            <div class="window" id="webApp" style="display: none;">
+                <div class="bar" id="webAppBar">
+                    <p><b id="appName"></b></p>
+                    <div class="button">
+                        <button onclick="minimiseW('webApp', 'webAppBar')">Minimise</button>
+                        <button onclick="maximiseW('webApp', 'webAppBar')">Maximise</button>
+                        <button onclick="closeW('webApp')">Close</button>
+                    </div>
+                </div>
+                <iframe id="webAppViewer"></iframe>
+            </div>
+            <div class="window" id="file" style="display: none;">
+                <div class="bar" id="fileBar">
+                    <p><b>File Viewer</b></p>
+                    <div class="button">
+                        <input type="file" id="fileOpener" style="display: none;">
+                        <button onclick="document.getElementById('fileOpener').click()">Open File</button>
+                        <button onclick="minimiseW('file', 'fileBar')">Minimise</button>
+                        <button onclick="maximiseW('file', 'fileBar')">Maximise</button>
+                        <button onclick="closeW('file')">Close</button>
+                    </div>
+                </div>
+                <iframe id="fileViewer"></iframe>
+            </div>
+            <div class="window" id="terminal" style="display: none;">
+                <div class="bar" id="terminalBar">
+                    <p><b>Nicholas' Terminal</b></p>
+                    <div class="button">
+                        <button onclick="document.getElementById('terminalViewer').src = document.getElementById('terminalViewer').src">Clear</button>
+                        <button onclick="minimiseW('terminal', 'terminalBar')">Minimise</button>
+                        <button onclick="maximiseW('terminal', 'terminalBar')">Maximise</button>
+                        <button onclick="closeW('terminal')">Close</button>
+                    </div>
+                </div>
+                <iframe id="terminalViewer" src="https://nicholaslim.me/terminal"></iframe>
+            </div>
+            <div id="powerOff" class="powerOff">
+                <p>Exit Nicholas' OS?</p>
+                <button onclick="window.location.href = 'about:blank'">Yes</button>
+                <button onclick="document.getElementById('powerOff').style.display = 'none'">No</button>
+            </div>
+        </main>
+        <footer id="footer">
+            <p><b>Nicholas' Operating System</b></p>
+            <p id="time"></p>
+            <button id="power" onclick="document.getElementById('powerOff').style.display = 'block';">&#x23FB;</button>
+        </footer>
+        <script src="script.js" defer></script>
+    </body>
+</html>
