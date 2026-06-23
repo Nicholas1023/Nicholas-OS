@@ -62,9 +62,20 @@ function closeW(window) {
     document.getElementById(window).style.display = "none"; 
 }
 
-document.getElementById("fileOpen").addEventListener("click", () => {minimiseW("file", "fileBar")});
-document.getElementById("terminalOpen").addEventListener("click", () => {minimiseW("terminal", "terminalBar")});
-document.getElementById("installerOpen").addEventListener("click", () => {minimiseW("installer", "installerBar")});
+document.getElementById("fileOpen").addEventListener("click", () => {
+    minimiseW("file", "fileBar");
+    document.getElementById("file").click();
+});
+
+document.getElementById("terminalOpen").addEventListener("click", () => {
+    minimiseW("terminal", "terminalBar");
+    document.getElementById("terminal").click();
+});
+
+document.getElementById("installerOpen").addEventListener("click", () => {
+    minimiseW("installer", "installerBar");
+    document.getElementById("installer").click();
+});
 
 document.getElementById("about").addEventListener("click", () => {
     document.getElementById("about").style.zIndex = "1000";
