@@ -82,6 +82,7 @@ document.getElementById("about").addEventListener("click", () => {
     document.getElementById("file").style.zIndex = "999";
     document.getElementById("terminal").style.zIndex = "999";
     document.getElementById("installer").style.zIndex = "999";
+    document.getElementById("webApp").style.zIndex = "999";
 });
 
 document.getElementById("terminal").addEventListener("click", () => {
@@ -89,6 +90,7 @@ document.getElementById("terminal").addEventListener("click", () => {
     document.getElementById("file").style.zIndex = "999";
     document.getElementById("terminal").style.zIndex = "1000";
     document.getElementById("installer").style.zIndex = "999";
+    document.getElementById("webApp").style.zIndex = "999";
 });
 
 document.getElementById("file").addEventListener("click", () => {
@@ -96,6 +98,7 @@ document.getElementById("file").addEventListener("click", () => {
     document.getElementById("file").style.zIndex = "1000";
     document.getElementById("terminal").style.zIndex = "999";
     document.getElementById("installer").style.zIndex = "999";
+    document.getElementById("webApp").style.zIndex = "999";
 });
 
 document.getElementById("installer").addEventListener("click", () => {
@@ -103,6 +106,15 @@ document.getElementById("installer").addEventListener("click", () => {
     document.getElementById("file").style.zIndex = "999";
     document.getElementById("terminal").style.zIndex = "999";
     document.getElementById("installer").style.zIndex = "1000";
+    document.getElementById("webApp").style.zIndex = "999";
+});
+
+document.getElementById("webApp").addEventListener("click", () => {
+    document.getElementById("about").style.zIndex = "999";
+    document.getElementById("file").style.zIndex = "999";
+    document.getElementById("terminal").style.zIndex = "999";
+    document.getElementById("installer").style.zIndex = "999";
+    document.getElementById("webApp").style.zIndex = "1000";
 });
 
 drag("about");
@@ -145,6 +157,7 @@ function createWebApp() {
     document.getElementById("apps").appendChild(app);
     document.getElementById(document.getElementById("url").value).addEventListener("click", () => {
         minimiseW("webApp", "webAppBar");
+        document.getElementById("webApp").click();
         document.getElementById("webAppViewer").src = document.getElementById("url").value;
         document.getElementById("appName").textContent = document.getElementById("name").value;
     });
