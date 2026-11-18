@@ -38,7 +38,7 @@
                         <button onclick="closeW('about')">Close</button>
                     </div>
                 </div>
-                <h1>Nicholas' OS Version 0.0.1</h1>
+                <h1>Nicholas' OS Version 0.0.2</h1>
                 <p style="margin-left: 5px;">Thanks for visiting my web-based OS!</p>
                 <h2 style="margin-left: 5px;">Available Applications</h2>
                 <ul style="margin-left: 5px;">
@@ -60,7 +60,7 @@
                 <div style="display: flex; align-items: center; margin-left: 5px;"><p >Enter URL:&nbsp;</p><input id="url" type="text"></div>
                 <div style="display: flex; align-items: center; margin-left: 5px;"><p>Enter app name:&nbsp;</p><input id="name" type="text"></div>
                 <div style="display: flex; align-items: center; margin-left: 5px;"><p>Enter app icon URL (optional):&nbsp;</p><input id="icon" type="text"></div>
-                <button style="background-color: #9fd2fb;" onclick="createWebApp()">Create web app</button>
+                <button class="boldButton" style="margin: 5px;" onclick="createWebApp()">Create web app</button>
             </div>
             <div class="window" id="webApp" style="display: none;">
                 <div class="bar" id="webAppBar">
@@ -100,15 +100,20 @@
             </div>
             <div id="powerOff" class="powerOff">
                 <p>Exit Nicholas' OS?</p>
-                <button onclick="window.location.href = 'about:blank'">Yes</button>
-                <button onclick="document.getElementById('powerOff').style.display = 'none'">No</button>
+                <button class="boldButton" onclick="window.location.href = 'about:blank'">Yes</button>
+                <button class="boldButton" onclick="document.getElementById('powerOff').style.display = 'none'">No</button>
             </div>
+            <p class="background-label"><i class="fa-solid fa-location-dot"></i>Victoria Peak, Hong Kong 太平山頂, 香港</p>
         </main>
         <footer id="footer">
-            <p><b>Nicholas' Operating System</b></p>
+            <div style="display: flex; align-items: center;">
+                <img style="margin-right: 5px;" src="https://nicholaslim.me/favicon.ico" width="30px" height="30px">
+                <p><b>Nicholas' OS</b></p>
+            </div>
             <p id="time"></p>
-            <button id="power" onclick="document.getElementById('powerOff').style.display = 'block';">&#x23FB;</button>
+            <button id="power" onclick="document.getElementById('powerOff').style.display = 'block';"><i class="fa-solid fa-power-off" style="font-size: smaller;"></i></button>
         </footer>
         <script src="script.js" defer></script>
+        <script src="https://kit.fontawesome.com/c13c173d03.js" crossorigin="anonymous"></script>
     </body>
 </html>

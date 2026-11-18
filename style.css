@@ -1,3 +1,11 @@
+* {
+    color: #e7e8ee;
+}
+
+:root {
+  color-scheme: dark;
+}
+
 body, #boot {
     padding: 0;
     margin: 0;
@@ -15,8 +23,10 @@ main, #boot {
     margin: 0;
     height: 100dvh;
     width: 100%;
+    display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 #boot {
@@ -31,7 +41,7 @@ footer {
     display: none;
     justify-content: space-around;
     align-items: center;
-    background-color: rgba(159, 210, 251, 0.75);
+    background-color: rgba(31, 57, 75, 0.75);
     width: 100%;
     bottom: 0;
     position: fixed;
@@ -39,11 +49,11 @@ footer {
 }
 
 .window {
-    background-color: white;
+    background-color: #191f23;
     width: 60%;
     height: 60%;
     border-radius: 10px;
-    border: 1px solid grey;
+    border: 1px solid #303030;
     z-index: 900;
     position: absolute;
 }
@@ -54,13 +64,13 @@ footer {
 
 .bar {
     margin: 0;
-    background-color: #9fd2fb;
+    background-color: #1f394b;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid #303030;
     user-select: none;
     cursor: grab;
 }
@@ -103,7 +113,7 @@ button:hover {
 }
 
 .app {
-    background-color: rgba(159, 210, 251, 0.75);
+    background-color: rgb(31, 57, 75, 0.75);
     display: flex;
     justify-content: left;
     align-items: center;
@@ -114,6 +124,14 @@ button:hover {
 
 .app * {
     padding: 5px;
+}
+
+input {
+  border: none;
+  border-radius: 5px;
+  height: 0.5rem;
+  padding: 0.5rem;
+  font-family: 'Lexend', system-ui, sans-serif;
 }
 
 iframe {
@@ -130,12 +148,23 @@ iframe {
     left: 0;
     z-index: 1000;
     display: none;
-    background-color: white;
-    border: 1px solid grey;
+    background-color: #191f23;
+    border: 1px solid #303030;
     border-radius: 10px;
     position: relative;
 }
 
-.powerOff button {
-    background-color: #9fd2fb;
+.boldButton {
+    background-color: #70bbd6;
+    color:#191f23;
+}
+
+.boldButton:hover {
+    background-color: #45aacf;
+}
+
+.background-label {
+    position: absolute;
+    bottom: 40px;
+    right: 10px;
 }
