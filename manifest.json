@@ -1,0 +1,15 @@
+{
+    "name": "Nicholas' Operating System",
+    "description": "Nicholas' web-based OS, with a terminal app as my personal website, a web app installer, and a file viewer.",
+    "start_url": "/Nicholas-OS/",
+    "display": "standalone",
+    "theme_color": "#191f23",
+    "background_color": "#191f23",
+    "icons": [
+        {
+            "src": "assets/favicon.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ]
+}
