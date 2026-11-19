@@ -8,6 +8,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
     </head>
     <body id="body" style="background-color: black;">
+        <div id="shutdown" style="background-color: black; display: none;">
+        </div>
         <div id="boot">
             <div style="text-align: center;">
                 <h1>Nicholas' Operating System</h1>
@@ -23,6 +25,10 @@
                 <div class="app" id="terminalOpen">
                     <img src="assets/terminal.png" width="50px" height="50px">
                     <p>Nicholas' Terminal</p>
+                </div>
+                <div class="app" id="browserOpen">
+                    <img src="assets/browser.png" width="50px" height="50px">
+                    <p>Browser</p>
                 </div>
                 <div class="app" id="installerOpen">
                     <img src="assets/installer.png" width="50px" height="50px">
@@ -45,7 +51,7 @@
                     <li><b>File Viewer</b>: Open files from your computer.</li>
                     <li><b>Nicholas' Terminal</b>: Web-based terminal version of my personal website.</li>
                     <li><b>Web App Installer</b>: Install your favourite websites as a web application.</li>
-                    <li><b>Any website via the web app installer!</b></li>
+                    <li><b>Browser</b>: Visit websites.</li>
                 </ul>
             </div>
             <div class="window" id="installer" style="display: none;">
@@ -72,6 +78,22 @@
                     </div>
                 </div>
                 <iframe id="webAppViewer"></iframe>
+            </div>
+            <div class="window" id="browser" style="display: none;">
+                <div class="bar" id="browserBar">
+                    <p><b>Browser</b></p>
+                    <div class="button">
+                        <button onclick="minimiseW('browser', 'browserBar')">Minimise</button>
+                        <button onclick="maximiseW('browser', 'browserBar')">Maximise</button>
+                        <button onclick="closeW('browser')">Close</button>
+                    </div>
+                </div>
+                <div>
+                    <input type="url" id="browserURL" placeholder="Enter a URL...">
+                    <button onclick="document.getElementById('viewport').src = document.getElementById('viewport').src"><i class="fa-solid fa-rotate-right"></i></button>
+                    <button onclick="document.getElementById('viewport').src = 'https://nicholaslim.me/new-tab/'"><i class="fa-regular fa-house"></i></button>
+                </div>
+                <iframe id="viewport" src="https://nicholaslim.me/new-tab/"></iframe>
             </div>
             <div class="window" id="file" style="display: none;">
                 <div class="bar" id="fileBar">
@@ -100,7 +122,7 @@
             </div>
             <div id="powerOff" class="powerOff">
                 <p>Exit Nicholas' OS?</p>
-                <button class="boldButton" onclick="window.location.href = 'about:blank'">Yes</button>
+                <button class="boldButton" onclick="shutdown()">Yes</button>
                 <button class="boldButton" onclick="document.getElementById('powerOff').style.display = 'none'">No</button>
             </div>
             <p class="background-label"><i class="fa-solid fa-location-dot"></i>Victoria Peak, Hong Kong 太平山頂, 香港</p>

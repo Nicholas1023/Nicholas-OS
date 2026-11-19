@@ -168,3 +168,8 @@ iframe {
     bottom: 40px;
     right: 10px;
 }
+
+#browserURL {
+    width: 85%;
+    margin: 5px;
+}

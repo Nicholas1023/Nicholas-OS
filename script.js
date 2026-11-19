@@ -77,12 +77,18 @@ document.getElementById("installerOpen").addEventListener("click", () => {
     document.getElementById("installer").click();
 });
 
+document.getElementById("browserOpen").addEventListener("click", () => {
+    minimiseW("browser", "browserBar");
+    document.getElementById("browser").click();
+});
+
 document.getElementById("about").addEventListener("click", () => {
     document.getElementById("about").style.zIndex = "1000";
     document.getElementById("file").style.zIndex = "999";
     document.getElementById("terminal").style.zIndex = "999";
     document.getElementById("installer").style.zIndex = "999";
     document.getElementById("webApp").style.zIndex = "999";
+    document.getElementById("browser").style.zIndex = "999";
 });
 
 document.getElementById("terminal").addEventListener("click", () => {
@@ -91,6 +97,7 @@ document.getElementById("terminal").addEventListener("click", () => {
     document.getElementById("terminal").style.zIndex = "1000";
     document.getElementById("installer").style.zIndex = "999";
     document.getElementById("webApp").style.zIndex = "999";
+    document.getElementById("browser").style.zIndex = "999";
 });
 
 document.getElementById("file").addEventListener("click", () => {
@@ -99,6 +106,7 @@ document.getElementById("file").addEventListener("click", () => {
     document.getElementById("terminal").style.zIndex = "999";
     document.getElementById("installer").style.zIndex = "999";
     document.getElementById("webApp").style.zIndex = "999";
+    document.getElementById("browser").style.zIndex = "999";
 });
 
 document.getElementById("installer").addEventListener("click", () => {
@@ -106,6 +114,7 @@ document.getElementById("installer").addEventListener("click", () => {
     document.getElementById("file").style.zIndex = "999";
     document.getElementById("terminal").style.zIndex = "999";
     document.getElementById("installer").style.zIndex = "1000";
+    document.getElementById("browser").style.zIndex = "999";
     document.getElementById("webApp").style.zIndex = "999";
 });
 
@@ -114,7 +123,17 @@ document.getElementById("webApp").addEventListener("click", () => {
     document.getElementById("file").style.zIndex = "999";
     document.getElementById("terminal").style.zIndex = "999";
     document.getElementById("installer").style.zIndex = "999";
+    document.getElementById("browser").style.zIndex = "999";
     document.getElementById("webApp").style.zIndex = "1000";
+});
+
+document.getElementById("browser").addEventListener("click", () => {
+    document.getElementById("about").style.zIndex = "999";
+    document.getElementById("file").style.zIndex = "999";
+    document.getElementById("terminal").style.zIndex = "999";
+    document.getElementById("installer").style.zIndex = "999";
+    document.getElementById("webApp").style.zIndex = "999";
+    document.getElementById("browser").style.zIndex = "1000";
 });
 
 drag("about");
@@ -122,6 +141,7 @@ drag("file");
 drag("terminal");
 drag("installer");
 drag("webApp");
+drag("browser");
 
 function drag(window) {
     document.getElementById(window + "Bar").addEventListener("mouseup", () => {document.onmousemove = ""});
@@ -162,3 +182,18 @@ function createWebApp() {
         document.getElementById("appName").textContent = document.getElementById("name").value;
     });
 }
+
+function shutdown() {
+    document.getElementById("boot").style.display =
+    document.getElementById("main").style.display = 
+    document.getElementById("footer").style.display = "none";
+    document.getElementById("shutdown").style.display = "block";
+}
+
+document.getElementById("browserURL").addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        if (document.getElementById("browserURL").value.trim() != "") {
+            document.getElementById("viewport").src = document.getElementById("browserURL").value;
+        }
+    }
+});
